@@ -1,0 +1,47 @@
+<h1 id="title" class="title">Login</h1>
+<p class="sub-title">Hello! Log in with your email.</p>
+
+
+
+<form [formGroup]="frm" (ngSubmit)="login(frm.value)"  aria-labelledby="title">
+
+  <div class="form-control-group">
+    <label class="label" for="input-email">Email address:</label>
+    <input nbInput
+           formControlName="username"
+           fullWidth
+           name="email"
+           id="input-email"
+           pattern=".+@.+\..+"
+           placeholder="Email address"
+           fieldSize="large"
+           autofocus>
+  </div>
+
+  <div class="form-control-group">
+    <span class="label-with-link">
+      <label class="label" for="input-password">Password:</label>
+      <a class="forgot-password caption-2">Forgot Password?</a>
+    </span>
+    <input nbInput
+           formControlName="password"
+           fullWidth
+           name="password"
+           type="password"
+           id="input-password"
+           placeholder="Password"
+           fieldSize="large">
+  </div>
+
+  <!-- <div class="form-control-group accept-group">
+    <nb-checkbox name="rememberMe" [(ngModel)]="user.rememberMe" *ngIf="rememberMe">Remember me</nb-checkbox>
+  </div> -->
+
+  <button nbButton
+          fullWidth
+          status="primary"
+          size="large">
+    Log In
+  </button>
+</form>
+
